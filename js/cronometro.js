@@ -13,14 +13,14 @@ let min = 0;
 
 function iniciar() {
     contar();
-    id = setInterval(contar, 1);
+    id = setInterval(contar, 10);
     document.getElementById('btnIniciar').disabled = true;
 }
 
 function contar() {
     let mAux, sAux, milAux;
     mil++;
-    if (mil >= 59) { seg++; mil = 0; }
+    if (mil > 59) { seg++; mil = 0; }
     if (seg > 59) { min++; seg = 0; }
     if (min > 59) { min = 0; }
 
@@ -44,5 +44,5 @@ function reiniciar() {
     minCronometro.innerText = "00";
     segCronometro.innerText = "00";
     milCronometro.innerText = "00";
-
+    document.getElementById('btnIniciar').disabled = false;
 }
